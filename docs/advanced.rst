@@ -25,7 +25,7 @@ If you need help running the pipeline, please check out our `Plug-Play <https://
 
 Swapping extractors
 -------------------
-PhytoOracle makes it easy to swap between extractors. To being swapping, edit the Makeflow file as follows:
+PhytoOracle makes it easy to swap between extractors. To begin swapping, edit the Makeflow file as follows:
 
 Editing our workflow 
 ~~~~~~~~~~~~~~~~~~~~
@@ -37,8 +37,8 @@ Editing our workflow
       "rules": [
                   {
                       "command" : "/bin/echo hello world > output.txt",
-                      "outputs" : [ "output.txt" ],
                       "inputs"  : [ ]
+                      "outputs" : [ "output.txt" ]
                   }
               ]
     }
@@ -56,6 +56,9 @@ Defining your values
        },
        "rules": [
            # Rules you created above go here
+           "environment": {
+              #The environment will be the tool allowing docker and the terminal to communicate with each other.
+           }
        ]
    }
    
